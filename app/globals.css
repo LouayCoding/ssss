@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins, sans-serif);
+}
+
+/* Voeg wat extra stijlen toe */
+.text-balance {
+  text-wrap: balance;
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Extra donkere geanimeerde gradient met rode accenten */
+.bg-animate-gradient {
+  background: linear-gradient(-45deg, 
+    #030915,  /* Bijna zwart met blauwe ondertoon */
+    #040c1a,  /* Zeer donker marineblauw */
+    #05112b,  /* Zeer donker middenblauw */
+    #1a0e1e,  /* Donker roodachtig accent */
+    #091936,  /* Donkerblauw, iets meer zichtbaar */
+    #071428,  /* Zeer donker marineblauw */
+    #150d19,  /* Zeer donker roodachtig paars */
+    #050e1d,  /* Zeer donkerblauw */
+    #02060f   /* Bijna zwart */
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+}
