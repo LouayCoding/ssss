@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
 
 // Confetti component voor de feestelijk effect bij de laatste stap
@@ -48,7 +48,7 @@ const Confetti = ({ active }: { active: boolean }) => {
     return () => {
       setParticles([]);
     };
-  }, [active]);
+  }, [active, colors]);
   
   // Animeer de deeltjes
   useEffect(() => {

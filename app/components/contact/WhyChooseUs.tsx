@@ -100,7 +100,7 @@ const WhyChooseUs = () => {
       >
         <div className="absolute -right-2 -top-2 w-12 h-12 bg-blue-500/10 rounded-full blur-xl"></div>
         <div className="text-sm text-blue-100/90 italic relative">
-          "Dankzij Amsterdamse Verkeersopleidingen heb ik in één keer mijn rijbewijs gehaald! De instructeurs zijn professioneel en nemen echt de tijd voor je."
+          &ldquo;Dankzij Amsterdamse Verkeersopleidingen heb ik in één keer mijn rijbewijs gehaald! De instructeurs zijn professioneel en nemen echt de tijd voor je.&rdquo;
         </div>
         <div className="mt-2 text-xs text-blue-200/70 flex items-center">
           <div className="w-4 h-4 rounded-full bg-blue-500/50 mr-2"></div>

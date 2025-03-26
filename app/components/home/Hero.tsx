@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView, useAnimation, Variants, AnimatePresence } from 'framer-motion';
+import { motion, useInView, useAnimation, Variants } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
@@ -89,35 +89,35 @@ const getRandomQuote = () => {
 };
 
 // Testimonials slider animatie varianten
-const testimonialVariants: Variants = {
-  hidden: { opacity: 0, height: 0, y: -10 },
-  visible: { 
-    opacity: 1, 
-    height: 'auto', 
-    y: 0,
-    transition: {
-      height: {
-        duration: 0.4,
-        ease: [0.04, 0.62, 0.23, 0.98]
-      },
-      opacity: { duration: 0.25, delay: 0.15 },
-      y: { duration: 0.25, delay: 0.15 }
-    }
-  },
-  exit: { 
-    opacity: 0, 
-    height: 0,
-    y: -10,
-    transition: {
-      height: {
-        duration: 0.3,
-        ease: [0.04, 0.62, 0.23, 0.98]
-      },
-      opacity: { duration: 0.2 },
-      y: { duration: 0.2 }
-    }
-  }
-};
+// const testimonialVariants: Variants = {
+//   hidden: { opacity: 0, height: 0, y: -10 },
+//   visible: { 
+//     opacity: 1, 
+//     height: 'auto', 
+//     y: 0,
+//     transition: {
+//       height: {
+//         duration: 0.4,
+//         ease: [0.04, 0.62, 0.23, 0.98]
+//       },
+//       opacity: { duration: 0.25, delay: 0.15 },
+//       y: { duration: 0.25, delay: 0.15 }
+//     }
+//   },
+//   exit: { 
+//     opacity: 0, 
+//     height: 0,
+//     y: -10,
+//     transition: {
+//       height: {
+//         duration: 0.3,
+//         ease: [0.04, 0.62, 0.23, 0.98]
+//       },
+//       opacity: { duration: 0.2 },
+//       y: { duration: 0.2 }
+//     }
+//   }
+// };
 
 // Voeg deze nieuwe animatie varianten toe aan de bestaande varianten in de Hero component
 const buttonVariants = {
@@ -143,10 +143,10 @@ const buttonVariants = {
 const Hero = () => {
   const [imageError, setImageError] = useState(false);
   const [showTestimonials, setShowTestimonials] = useState(false);
-  const [selectedTestimonial, setSelectedTestimonial] = useState<number | null>(null);
-  const [randomQuote, setRandomQuote] = useState(() => getRandomQuote());
-  const [showQuoteBubble, setShowQuoteBubble] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0);
+  // const [selectedTestimonial, setSelectedTestimonial] = useState<number | null>(null);
+  // const [randomQuote, setRandomQuote] = useState(() => getRandomQuote());
+  // const [showQuoteBubble, setShowQuoteBubble] = useState(false);
+  // const [windowWidth, setWindowWidth] = useState(0);
   const ratingRef = useRef(null);
   const isInView = useInView(ratingRef, { once: true, amount: 0.5 });
   const controls = useAnimation();
@@ -154,7 +154,7 @@ const Hero = () => {
   // Update window width on resize
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      // setWindowWidth(window.innerWidth);
     };
     
     // Set initial width
@@ -169,7 +169,7 @@ const Hero = () => {
       controls.start('visible');
       // Toon de quote bubble na een korte vertraging
       const timer = setTimeout(() => {
-        setShowQuoteBubble(true);
+        // setShowQuoteBubble(true);
       }, 1500);
       return () => clearTimeout(timer);
     }
@@ -199,14 +199,15 @@ const Hero = () => {
     }
   };
 
-  const handleToggleTestimonials = () => {
-    setShowTestimonials(!showTestimonials);
-    if (!showTestimonials) {
-      setSelectedTestimonial(1); // Selecteer de eerste testimonial bij openen
-    } else {
-      setSelectedTestimonial(null);
-    }
-  };
+  // Functie om testimonials te tonen/verbergen
+  // const handleToggleTestimonials = () => {
+  //   setShowTestimonials(!showTestimonials);
+  //   if (!showTestimonials) {
+  //     setSelectedTestimonial(1); // Selecteer de eerste testimonial bij openen
+  //   } else {
+  //     setSelectedTestimonial(null);
+  //   }
+  // };
 
   return (
     <div className="relative text-white overflow-hidden min-h-[90vh] flex items-center pt-16 pb-12">
